@@ -1,0 +1,80 @@
+
+a:hover {
+  color: rgb(230, 109, 230);
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:active {
+  color: green;
+}
+
+.trade_name {
+  font-size: 2.3em;
+  position: relative;
+  top: 5%;
+  height: 10vh;
+  width: auto;
+  font-weight: bold;
+  color: black;
+  padding-top: 7px;
+}
+
+.header {
+  background: white;
+  height: 15vh;
+  width: 100%;
+  display: flex;
+}
+
+.header_element{
+  position: relative;
+  font-size: large;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 30%;
+}
+
+.start_saving_button{
+  position: relative;
+  top: 20%;
+  color: white;
+  background-color: rgb(212, 64, 89);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+}
+
+@-webkit-keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+.hvr-pulse-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-pulse-grow:hover, .hvr-pulse-grow:focus, .hvr-pulse-grow:active {
+  -webkit-animation-name: hvr-pulse-grow;
+  animation-name: hvr-pulse-grow;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
