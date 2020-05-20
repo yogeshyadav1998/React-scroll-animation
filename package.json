@@ -5,14 +5,18 @@
   "dependencies": {
     "@material-ui/core": "^4.9.7",
     "antd": "^3.3.3",
+    "aos": "^2.3.4",
     "bootstrap-social": "^5.1.1",
     "hover.css": "^2.3.2",
     "linear-gradient": "^1.0.6",
     "material-ui": "^0.20.2",
     "react": "^16.11.0",
+    "react-animated-css": "^1.2.1",
     "react-dom": "^16.11.0",
     "react-reveal": "^1.2.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "react-scroll": "^1.7.16",
+    "react-transition-group": "^4.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,7 +41,9 @@
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "react-alice-carousel": "^1.19.0"
+  },
   "author": "",
   "license": "ISC"
 }
