@@ -94,6 +94,7 @@ class phase3 extends Component{
           items={1}
           slideToIndex={(currentIndex)%6}
           fadeOutAnimation={false}
+          duration={450}
         >
           { items.map((item, i) => <div key={i} className= "galleryimagelarge"><img style={{height:"100%", width:"100%"}} src={item.src}/></div>) }
         </AliceCarousel>);
@@ -109,6 +110,7 @@ class phase3 extends Component{
           items={1}
           startIndex={currentIndex+1}
           slideToIndex={(currentIndex+1)%6}
+          duration={450}
         >
           { items.map((item, i) => <div key={i} className= "galleryimage"><img style={{height:"100%", width:"100%"}} src={item.src}/></div>) }
         </AliceCarousel>);
@@ -125,6 +127,7 @@ class phase3 extends Component{
           startIndex={currentIndex+2}
           slideToIndex={(currentIndex+2)%6}
           fadeOutAnimation={false}
+          duration={450}
         >
           { items.map((item, i) => <div key={i} className= "galleryimage"><img style={{height:"100%", width:"100%"}} src={item.src}/></div>) }
         </AliceCarousel>);
@@ -155,14 +158,14 @@ class phase3 extends Component{
                     </div>
                     </Col>
                     <Col md={5}>
-                    <div className="gallery32">
+                    <div className="gallery3">
                     { this.renderGallery3() }
                     </div>
                     <button className="prevslide button3" onClick={() => this.slideNext()}><Icon type="arrow-left" /></button>
                     </Col>
                     <Col md={5}>
                     <div>
-                    <div className="gallery33">
+                    <div className="gallery3">
                     { this.renderGallery4() }
                     </div>
                     </div>
