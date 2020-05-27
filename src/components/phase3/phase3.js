@@ -61,60 +61,72 @@ class phase3 extends Component{
           ]
         };
       }
-
-  
-      onSlideChanged = (e) => this.setState({ currentIndex: e.item });
   
       slideNext = () => {
           this.setState({ currentIndex:  this.state.currentIndex - 1});
-          console.log(this.state.currentIndex)
         }
   
       slidePrev = () => this.setState({ currentIndex: this.state.currentIndex + 1 });
-  
-  
-      renderGallery() {
-        const { currentIndex, items } = this.state;
+      
+      renderGallery1(){
+        const {currentIndex, texts } = this.state;
 
-        const responsive = {
-            0: {
-              items: 1
-            },
-            600: {
-              items: 2
-            },
-            1024: {
-              items: 3
-            }
-          };
+        return(
+              <AliceCarousel
+                      autoPlay={false}
+                      fadeOutAnimation={true}
+                      items={1}
+                      slideToIndex={currentIndex}
+                      buttonsDisabled={true}
+                      dotsDisabled={true}
+                      >
+                        { texts.map((text, i) => <div key={i}  className="gallerytext1"><p className="heading33">{text.text1}</p>
+                      <p className="heading34">{text.text2}</p></div>) }
+      </AliceCarousel>);
+    }
+  
+      renderGallery2() {
+        const { currentIndex, items } = this.state;
   
         return (<AliceCarousel
           dotsDisabled={true}
           buttonsDisabled={true}
-          startIndex={currentIndex}
+          items={1}
+          slideToIndex={(currentIndex)%6}
           fadeOutAnimation={false}
-          responsive={responsive}
-          onSlideChanged={this.onSlideChanged}
         >
-          { items.map((item, i) => <div key={i} className={ this.state.currentIndex == item.name ? "galleryimagelarge" : "galleryimage"}><img style={{height:"100%", width:"100%"}} src={item.src}/></div>) }
+          { items.map((item, i) => <div key={i} className= "galleryimagelarge"><img style={{height:"100%", width:"100%"}} src={item.src}/></div>) }
+        </AliceCarousel>);
+      }
+
+      renderGallery3() {
+        const { currentIndex, items } = this.state;
+        
+        
+        return (<AliceCarousel
+          dotsDisabled={true}
+          buttonsDisabled={true}
+          items={1}
+          startIndex={currentIndex+1}
+          slideToIndex={(currentIndex+1)%6}
+        >
+          { items.map((item, i) => <div key={i} className= "galleryimage"><img style={{height:"100%", width:"100%"}} src={item.src}/></div>) }
         </AliceCarousel>);
       }
   
-      renderGallery1(){
-          const {currentIndex, texts } = this.state;
-
-          return(
-                <AliceCarousel
-                        autoPlay={false}
-                        fadeOutAnimation={false}
-                        items={1}
-                        slideToIndex={currentIndex}
-                        buttonsDisabled={true}
-                        dotsDisabled={true}
-                        onSlideChanged={this.onSlideChanged}
-                        >
-                          { texts.map((text, i) => <div key={i}  className="galleryimage1"><p className="heading33">{text.text1}</p>
-                        <p className="heading34">{text.text2}</p></div>) }
+      renderGallery4() {
+        const { currentIndex, items } = this.state;
+        
+        
+        return (<AliceCarousel
+          dotsDisabled={true}
+          buttonsDisabled={true}
+          items={1}
+          startIndex={currentIndex+2}
+          slideToIndex={(currentIndex+2)%6}
+          fadeOutAnimation={false}
+        >
+          { items.map((item, i) => <div key={i} className= "galleryimage"><img style={{height:"100%", width:"100%"}} src={item.src}/></div>) }
         </AliceCarousel>);
       }
   
@@ -132,17 +144,29 @@ class phase3 extends Component{
                     </Col>
                 </Row>
                 <Row>
-                    <Col md={6} offset={4}>
+                    <Col md={6} offset={2}>
                     <div className="text32">
                         {this.renderGallery1()} 
                     </div>
                     </Col>
-                    <Col md={14}>
+                    <Col md={6}>
                     <div className="gallery3">
-                    { this.renderGallery() }
-                    <button className="nextslide button3" onClick={() => this.slidePrev()}><Icon type="arrow-right" /></button>
-                    <button className="prevslide button3" onClick={() => this.slideNext()}><Icon type="arrow-left" /></button>
+                    { this.renderGallery2() }
                     </div>
+                    </Col>
+                    <Col md={5}>
+                    <div className="gallery32">
+                    { this.renderGallery3() }
+                    </div>
+                    <button className="prevslide button3" onClick={() => this.slideNext()}><Icon type="arrow-left" /></button>
+                    </Col>
+                    <Col md={5}>
+                    <div>
+                    <div className="gallery33">
+                    { this.renderGallery4() }
+                    </div>
+                    </div>
+                    <button className="nextslide button3" onClick={() => this.slidePrev()}><Icon type="arrow-right" /></button>
                     </Col>
                 </Row>
             </div>

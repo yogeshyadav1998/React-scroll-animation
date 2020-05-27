@@ -30,24 +30,38 @@
 }
 
 .gallery3{
-    margin-top: 5vh;
     height: 55vh;
-    width: 100%;
+    width: 90%;
 }
 
 .galleryimage{
     margin: 5vh 0vh;
     height: 45vh;
     width: 35vh;
+    overflow: hidden;
 }
 
 .galleryimagelarge{
-    margin: 5vh 0vh;
+    margin-top: 5vh;
     height: 53vh;
-    width: 35vh;
+    width: 45vh;
+    overflow: hidden;
+    
 }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%; 
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
 
-.galleryimage1{
+.gallerytext1{
     height: 45vh;
     width: 48vh;
     z-index: 100;
@@ -71,13 +85,13 @@
 .nextslide{
     position: absolute;
     top: 85%;
-    left: 66%;
+    left: 0;
 }
 
 .prevslide{
     position: absolute;
     top: 85%;
-    left: 60%;
+    right:10%;
 }
 
 .heading33{
