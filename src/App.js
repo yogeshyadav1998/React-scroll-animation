@@ -4,6 +4,7 @@ import Header from './components/header2/header';
 import Phase1 from './components/phase1/phase1';
 import Phase2 from './components/phase2/phase2';
 import Phase3 from './components/phase3/phase3';
+import Phase4 from './components/phase4/phase4';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Phase1></Phase1>
       <Phase2></Phase2>
       <Phase3></Phase3>
+      <Phase4></Phase4>
     </div>
   );
 }
